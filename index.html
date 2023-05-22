@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Analisador de Leis</title>
+  <title>Legismetria - Comparativo de Lei</title>
   <style>
     body {
       background-color: #222;
@@ -62,7 +62,7 @@
     th, td {
       border: 1px solid #444;
       padding: 8px;
-      text-align: left;
+      text-align: center;
     }
     th:first-child, td:first-child {
       background-color: #555;
@@ -85,14 +85,14 @@
   </script>
 </head>
 <body>
-  <h1>Comparativo das Leis</h1>
+  <h1>Legismetria - Comparativo de Lei</h1>
 
   <table id="table1">
     <tr>
       <td><strong>Lei</strong></td>
-      <td>Lei Municipal Complementar nº 2526.2012</td>
-      <td>Lei Municipal nº 18.794.2022</td>
-      <td>Lei nº 9.534-2020</td>
+      <td>Lei Municipal Complementar nº 2526/2012</td>
+      <td>Lei Municipal nº 18.794/2022</td>
+      <td>Lei Municipal n° 9.534/2020</td>
     </tr>
     <tr>
       <td><strong>Cidade</strong></td>
@@ -116,9 +116,9 @@
   <table id="table2" style="display: none;">
     <tr>
       <td><strong>Lei</strong></td>
-      <td>Lei Municipal Complementar nº 2526.2012</td>
-      <td>Lei Municipal nº 18.794.2022</td>
-      <td>Lei nº 9.534-2020</td>
+      <td>Lei Municipal Complementar nº 2526/2012</td>
+      <td>Lei Municipal nº 18.794/2022</td>
+      <td>Lei Municipal n° 9.534/2020</td>
     </tr>
     <tr>
       <td><strong>Quantidade de vezes que "multa" aparece</strong></td>
@@ -136,9 +136,9 @@
   <table id="table3" style="display: none;">
     <tr>
       <td><strong>Lei</strong></td>
-      <td>Lei Municipal Complementar nº 2526.2012</td>
-      <td>Lei Municipal nº 18.794.2022</td>
-      <td>Lei nº 9.534-2020</td>
+      <td>Lei Municipal Complementar nº 2526/2012</td>
+      <td>Lei Municipal nº 18.794/2022</td>
+      <td>Lei Municipal n° 9.534/2020</td>
     </tr>
     <tr>
       <td><strong>Possui referencias a outras leis?</strong></td>
@@ -162,7 +162,7 @@
   <div id="loading" class="loading">
     <iframe src="https://giphy.com/embed/3o7bu3XilJ5BOiSGic" width="48" height="48" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
   </div>
-  <button class="button" onclick="showLoading(['table2', 'table3'], 'table1')">Análise de básica</button>
+  <button class="button" onclick="showLoading(['table2', 'table3'], 'table1')">Análise básica</button>
   <button class="button" onclick="showLoading(['table1', 'table3'], 'table2')">Análise de segurança jurídica</button>
   <button class="button" onclick="showLoading(['table1', 'table2'], 'table3')">Análise de facilidade de compreensão</button>
 </body>
