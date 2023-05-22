@@ -1,55 +1,169 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Movie Comparison</title>
-    <style>
-      body {
-        background-color: #222;
-        color: #fff;
-        font-family: Arial, sans-serif;
-      }
-      h1 {
-        color: #fff;
-        text-align: center;
-      }
-      table {
-        border-collapse: collapse;
-        width: 100%;
-      }
-      th, td {
-        border: 1px solid #444;
-        padding: 8px;
-        text-align: left;
-      }
-      th {
-        background-color: #333;
-      }
-    </style>
-  </head>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Comparison</title>
+  <style>
+    body {
+      background-color: #222;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      color: #fff;
+      text-align: center;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    td {
+      border: 1px solid #444;
+      padding: 8px;
+      text-align: left;
+    }
+    td:first-child {
+      font-weight: bold;
+    }
+    .loading {
+      display: none;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .loading img {
+      width: 50px;
+      height: 50px;
+    }
+    .button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-family: 'Arial', sans-serif;
+      font-size: 16px;
+      font-weight: bold;
+      text-align: center;
+      text-decoration: none;
+      background-color: #333;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .button:hover {
+      background-color: #555;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    th, td {
+      border: 1px solid #444;
+      padding: 8px;
+      text-align: left;
+    }
+    th:first-child, td:first-child {
+      background-color: #555;
+      font-weight: bold;
+    }
+    .last {
+      background-color: #333;
+    }
+  </style>
+  <script>
+    function showLoading(otherTables, nextTableName) {
+      document.getElementById('loading').style.display = 'block';
+      setTimeout(function() {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById(otherTables[0]).style.display = 'none';
+        document.getElementById(otherTables[1]).style.display = 'none';
+        document.getElementById(nextTableName).style.display = 'block';
+      }, Math.floor(Math.random() * (2000 - 800 + 1)) + 800);
+    }
+  </script>
+</head>
 <body>
-  <h1>Comparações de leis</h1>
-  <table>
+  <h1>Comparativo das Leis</h1>
+
+  <table id="table1">
     <tr>
-      <td><strong>Title</strong></td>
-      <td>The Shawshank Redemption</td>
-      <td>The Shawshank Redemption</td>
-      <td>The Shawshank Redemption</td>
+      <td><strong>Lei</strong></td>
+      <td>Lei Municipal Complementar nº 2526.2012</td>
+      <td>Lei Municipal nº 18.794.2022</td>
+      <td>Lei nº 9.534-2020</td>
     </tr>
     <tr>
-      <td><strong>Director</strong></td>
-      <td>Frank Darabont</td>
-      <td>Frank Darabont</td>
-      <td>Frank Darabont</td>
+      <td><strong>Cidade</strong></td>
+      <td>Ribeirão Preto</td>
+      <td>Recife</td>
+      <td>Salvador</td>
     </tr>
     <tr>
-      <td><strong>Year</strong></td>
-      <td>1994</td>
-      <td>1994</td>
-      <td>1994</td>
+      <td><strong>Número de Capítulos</strong></td>
+      <td>1</td>
+      <td>4</td>
+      <td>0</td>
     </tr>
-    <!-- Add more rows for additional movies -->
+    <tr>
+      <td><strong>Número de Artigos</strong></td>
+      <td>8</td>
+      <td>52</td>
+      <td>13</td>
+    </tr>
   </table>
+  <table id="table2" style="display: none;">
+    <tr>
+      <td><strong>Lei</strong></td>
+      <td>Lei Municipal Complementar nº 2526.2012</td>
+      <td>Lei Municipal nº 18.794.2022</td>
+      <td>Lei nº 9.534-2020</td>
+    </tr>
+    <tr>
+      <td><strong>Quantidade de vezes que "multa" aparece</strong></td>
+      <td>0</td>
+      <td>7</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <td><strong>Quantidade de palavras</strong></td>
+      <td>127</td>
+      <td>452</td>
+      <td>380</td>
+    </tr>
+  </table>
+  <table id="table3" style="display: none;">
+    <tr>
+      <td><strong>Lei</strong></td>
+      <td>Lei Municipal Complementar nº 2526.2012</td>
+      <td>Lei Municipal nº 18.794.2022</td>
+      <td>Lei nº 9.534-2020</td>
+    </tr>
+    <tr>
+      <td><strong>Possui referencias a outras leis?</strong></td>
+      <td>não</td>
+      <td>sim</td>
+      <td>sim</td>
+    </tr>
+    <tr>
+      <td><strong>Quantidade de palavras técnicas</strong></td>
+      <td>50</td>
+      <td>32</td>
+      <td>88</td>
+    </tr>
+    <tr class="last">
+      <td><strong>Nota</strong></td>
+      <td>4</td>
+      <td>2</td>
+      <td>1</td>
+    </tr>
+  </table>
+  <div id="loading" class="loading">
+    <iframe src="https://giphy.com/embed/3o7bu3XilJ5BOiSGic" width="48" height="48" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p></p>
+  </div>
+  <button class="button" onclick="showLoading(['table2', 'table3'], 'table1')">Análise de básica</button>
+  <button class="button" onclick="showLoading(['table1', 'table3'], 'table2')">Análise de segurança jurídica</button>
+  <button class="button" onclick="showLoading(['table1', 'table2'], 'table3')">Análise de facilidade de compreensão</button>
 </body>
 </html>
